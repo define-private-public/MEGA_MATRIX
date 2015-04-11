@@ -28,7 +28,7 @@ def main():
 		# Exit
 		print('Need at least three arguements.')
 		print('Usage:')
-		print('  python3 mm2png.py <png_file> <seconds> <destination>')
+		print('  python3 png2mm.py <png_file> <seconds> <destination>')
 		sys.exit(0)
 	
 	# Peel some data out
