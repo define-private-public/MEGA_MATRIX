@@ -4,10 +4,10 @@
 # MEGA_MATRIX hardware device
 #
 # Usage:
-#   python3 mm.py <serial_port> <folder>/animation.txt
+#   python2 mm.py <serial_port> <folder>/animation.txt
 #
 # Example
-#   python3 mm.py /dev/ttyACM0 banner/animation.txt
+#   python2 mm.py /dev/ttyACM0 banner/animation.txt
 #
 # An "image," is a 24x24 text file that contains only 1's and 0's.  A 1 means to turn the LED on,
 # and 0 means to turn it off.  Behaviour is undefined if you do anything else. 
@@ -174,6 +174,7 @@ if len(sys.argv) < 3:
     sys.exit(0)
 
 signal.signal(signal.SIGINT, shutdown)
+signal.signal(signal.SIGTERM, shutdown)
 startup()
 main()
 shutdown()
