@@ -82,11 +82,16 @@ def main():
     port = sys.argv[1]
     seqFilename = sys.argv[2]
     seqDir = os.path.abspath(os.path.dirname(seqFilename))
+    seqFilename = os.path.abspath(seqFilename)
 
 
     # Read in the image file
     seqFile = open(seqFilename, 'r')
 
+    # pull out the image data
+    frameWidth, frameHeight = seqFile.readline().split('x')
+    frameWidth = int(frameWidth)
+    frameHeight = int(frameHeight)
 
     # Get the image files
     imageFiles = seqFile.readline()[7:]
@@ -94,7 +99,6 @@ def main():
     for i in range(len(imageFiles)):
         imageFiles[i] = imageFiles[i].strip(' \n\r')
         imageFiles[i] = os.path.join(seqDir, imageFiles[i])
-
 
     # Read in each of the files, then get their data, and put it into a dict
     frameData = {}
