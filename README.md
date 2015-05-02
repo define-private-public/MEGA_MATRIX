@@ -3,7 +3,7 @@ MEGA_MATRIX
 
 A 3x3 matrix of 8x8 LED matrices 
 
- * You can find the firmware in `mm_arduino` (Arduino Uno's only).
+ * You can find the firmware in `mm_arduino` (Arduino Uno and MEGA only).
  * You can find two applications to write images to MEGA_MATRIX in 'mm_py'
    * Use `png2mm.py` to create banners
    * Use `mm.py` to put those banners (or other animations) to MEGA_MATRIX
